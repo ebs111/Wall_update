@@ -1,4 +1,4 @@
-﻿#!/usr/bin/python
+#!/usr/bin/python
 
 import os, sys, urllib, json, re, shutil, glob, platform,time
 import xbmcaddon, xbmcgui, xbmc, time, datetime, urllib2,logging
@@ -61,13 +61,14 @@ def UpdateMovies(libraryFolderMovies):
 		 folders.append(movie_name)
 		 
 		 MovieFolder = os.path.normpath(xbmc.translatePath(os.path.join(libraryFolderMovies, movie_name)).decode("utf-8"))
-		try:
+		 try:
+		   
 		   os.makedirs(MovieFolder)
 		   exist_folder=0
-		except OSError as e:
+		 except OSError as e:
 		   exist_folder=1
 
-		if exist_folder==0:
+		 if exist_folder==0:
 			LOG.append("Wall.Sync: ADD Movie {0}".format(movie_name.decode("utf-8")))
 
 
